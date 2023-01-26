@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Calculadora Teorema de Pitágoras</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        type='text/css'>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Calculando Teorema de Pitágoras</span>
+    </nav>
+    <div class="container-fluid">
+        <form>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="catetoOposto">Cateto Oposto (b)</label>
+                    <input type="number" class="form-control" id="catetoOposto">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="catetoAdjacente">Cateto Adjacente (c)</label>
+                    <input type="number" class="form-control" id="catetoAdjacente">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <button type="button" class="btn btn-primary" onclick="Calcula()">Calcular</button>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="hipotenusa">Hipotenusa</label>
+                <input type="number" class="form-control" id="hipotenusa">
+            </div>
+        </div>
+    </div>
+    <script>
+        function Calcula() {
+            var catetoOposto = document.getElementById("catetoOposto").value;
+            var catetoAdjacente = document.getElementById("catetoAdjacente").value;
+
+            var hipotenusa = Math.sqrt( Math.pow(catetoOposto, 2) + Math.pow(catetoAdjacente, 2));
+
+            var inputHipotenusa = document.getElementById("hipotenusa");
+            inputHipotenusa.value = hipotenusa;
+        }
+    </script>
+</body>
+</html>
